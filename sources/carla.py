@@ -13,7 +13,7 @@ import random
 import numpy as np
 import math
 from dataclasses import dataclass
-import psutil
+#import psutil
 import subprocess
 from queue import Queue
 
@@ -337,6 +337,7 @@ def get_exec_command():
 
 
 # tries to close, and if that does not work to kill all carla processes
+'''
 def kill_processes():
 
     binary = get_binary()
@@ -364,13 +365,13 @@ def kill_processes():
                 pass
         psutil.wait_procs(still_alive)
 
-
+'''
 # Starts Carla simulator
 def start(playing=False):
     # Kill Carla processes if there are any and start simulator
     if settings.CARLA_HOSTS_TYPE == 'local':
         print('Starting Carla...')
-        kill_processes()
+        #kill_processes()
         for process_no in range(1 if playing else settings.CARLA_HOSTS_NO):
             subprocess.Popen(get_exec_command()[1] + f' -carla-rpc-port={settings.CARLA_HOSTS[process_no][1]}', cwd=settings.CARLA_PATH, shell=True)
             time.sleep(2)

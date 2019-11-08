@@ -11,7 +11,7 @@ from sources import STOP, get_hparams
 from sources import run_agent, AGENT_STATE
 from sources import run_trainer, check_weights_size, TRAINER_STATE, CarlaEnv
 from sources import ConsoleStats, Commands
-from sources import get_carla_exec_command, kill_carla_processes, CarlaEnvSettings, CARLA_SETTINGS_STATE
+from sources import get_carla_exec_command, CarlaEnvSettings, CARLA_SETTINGS_STATE
 
 
 if __name__ == '__main__':

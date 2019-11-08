@@ -1,5 +1,5 @@
 # Carla environment settings
-CARLA_PATH = '../CARLA_0.9.6_Python_3.7'  # Path to Carla root folder
+CARLA_PATH = '/home/kishor/GWM/Github_Repos/Carla-Reinforcement-Learning-0.9/CARLA_0.9.5/CARLA_0.9.5'  # Path to Carla root folder
 CARLA_HOSTS_TYPE = 'local'  # 'local' or 'remote', 'local' means that script can start and restart Carla Simulator
 CARLA_HOSTS_NO = 1
 CARLA_HOSTS = [['localhost', 2000, 10], ['localhost', 2002, 10]]  # List of hosts and ports and worlds to use, at least 2 ports of difference as Carla uses N and N+1 port, Town01 to Town97 for world currently, Town01 to Town07 for world are currently available, int number instead - random world change interval in minutes
@@ -7,7 +7,7 @@ SECONDS_PER_EPISODE = 10
 EPISODE_FPS = 60  # Desired
 IMG_WIDTH = 480
 IMG_HEIGHT = 270
-CAR_NPCS = 50
+CAR_NPCS = 0
 RESET_CAR_NPC_EVERY_N_TICKS = 1  # Resets one car NPC every given number of ticks, tick is about a second
 ACTIONS = ['forward', 'forward_left', 'forward_right', 'brake', 'brake_left', 'brake_right']  # ['forward', 'left', 'right', 'forward_left', 'forward_right', 'backwards', 'backwards_left', 'backwards_right']
 WEIGHT_REWARDS_WITH_EPISODE_PROGRESS = False  # Linearly weights rewards from 0 to 1 with episode progress (from 0 up to SECONDS_PER_EPISODE)
@@ -20,7 +20,7 @@ COLLISION_FILTER = [['static.sidewalk', -1], ['static.road', -1], ['vehicle.', 5
 # Agent settings
 AGENTS = 1
 AGENT_MEMORY_FRACTION = 0.1
-AGENT_GPU = None  # None, a number (to use given GPU for all agents) or a list - example [0, 1, 1] (first agent - GPU 0, 2nd and 3rd GPU 1)
+AGENT_GPU = 0  # None, a number (to use given GPU for all agents) or a list - example [0, 1, 1] (first agent - GPU 0, 2nd and 3rd GPU 1)
 AGENT_CARLA_INSTANCE = []  # Empty list for first Carla instance or list in size of AGENTS with Carla instance bounds for agents, for excample [1, 1, 2, 2]
 UPDATE_WEIGHTS_EVERY = 0  # How frequently to update weights (compared to trainer fits), 0 for episode start only
 AGENT_SHOW_PREVIEW = []  # List of agent id's so show a preview, or empty list
@@ -41,8 +41,8 @@ SAVE_CHECKPOINT_EVERY = 100  # episodes
 
 # DQN settings
 DISCOUNT = 0.99
-REPLAY_MEMORY_SIZE = 20_000  # How many last steps to keep for model training
-MIN_REPLAY_MEMORY_SIZE = 5_000  # Minimum number of steps in a memory to start training
+REPLAY_MEMORY_SIZE = 20000  # How many last steps to keep for model training
+MIN_REPLAY_MEMORY_SIZE = 5000  # Minimum number of steps in a memory to start training
 
 # Exploration settings
 START_EPSILON = 1
